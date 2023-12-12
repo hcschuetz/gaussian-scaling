@@ -3,8 +3,10 @@ import { DynamicItems, Slide } from "./SlideShow";
 
 const Colophon: FC = () => (
   <Slide style={{fontSize: 60, paddingLeft: 300}}>
-    <h3>Tools Used</h3>
+    <h3 style={{margin: "0.2em 0"}}>Tools Used</h3>
     (web technologies only)
+    <br />
+    https://hcschuetz.github.io/gaussian-scaling/dist/
     <ul>
       <DynamicItems folder="colophon">
         <li>basics: TypeScript, React, and Vite</li>

@@ -579,21 +579,19 @@ And my web-based approach has additional advantages:
      - or between exp(x) and e^x.
 2. I can easily publish the slides for you to play around with.
 
-[11-1]
-### TODO: Add the URL to the slide ######################
 
-[11-2]
+[11-1]
 So what have I used?
 - TypeScript, React, and Vite are meanwhile pretty standard choices.
 
-[11-3]
+[11-2]
 - three.js provides a relatively comfortable JavaScript API
   for 3D graphics running in the browser, using your graphics card.
 - react-three-fiber makes this even more comfortable
   by integrating it with React.
 - "drei" is a set of react-three-fiber components.
 
-[11-4]
+[11-3]
 - I have used SVG for 2D graphics.
 
 - In earlier versions of this presentation I have also used
@@ -610,7 +608,7 @@ So what have I used?
 
 - Plain canvas was a bit too low-level.
 
-[11-5]
+[11-4]
 - For rendering TeX formulas I have chosen KaTeX over MathJax because it felt
   much more light-weight.
   I think MathJax is more appropriate for non-interactive documents.
@@ -618,7 +616,7 @@ So what have I used?
 - I preferred Matej Mazur's react integration over other existing integrations.
   But unfortunately I don't remember why.
 
-[11-6]
+[11-5]
 - Leva provides the config boxes in the top-right corners of the slide.
 
   These are not only useful for interacting with the presentation
@@ -627,7 +625,7 @@ So what have I used?
   In particular, they allowed me to go through the steps of a slide manually
   before I configured the sequence of steps.
 
-[11-7]
+[11-6]
 - The slide-show navigation is home-grown.
 
   There are of course a lot of tools around,
