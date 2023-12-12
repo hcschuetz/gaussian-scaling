@@ -1,0 +1,639 @@
+[1]
+In this video I'm explaining one particular aspect of the Gaussian distribution
+(aka the normal distribution),
+namely the scaling factor.
+
+--------------------------------------------------------------------------------
+
+[2-0]
+I assume you know the probability density function of the Gaussian distribution.
+
+Here I am using the function "exp" to denote the exponential function.
+Programmers will be used to this notation.
+Mathematicians are more used to write this as a power with the base "e".
+
+[e^: on]
+But I find this a bit hard to read.
+And by the way, by default TeX typesets this even smaller.
+
+[small exp: on]
+So let's switch back to the function-call notation,
+as we anyway do not care about the Euler constant itself.
+
+[e^: off]
+The density function has two parameters μ and σ to tweak the distribution:
+- μ denotes the mean and
+- σ denotes the standard deviation.
+
+[2-1]
+As for any probability density function
+the integral over our function's domain must be 1.
+This is because it is 100% certain that an experiment
+will produce **some** value in the domain.
+
+In the case of the Gaussian distribution the domain is the set of real numbers.
+So we have to integrate from negative infinity to positive infinity.
+
+[2-2]
+So let us vary the parameters a bit to see their impact on the distribution.
+
+[2-3][2-4][2-5]
+If we vary the mean μ,
+this moves the bell curve to the left or to the right.
+But it has no impact on the integral.
+
+[2-6][2-7][2-8][2-9]
+If we vary the standard deviation σ,
+this stretches or squeezes the bell curve horizontally.
+To ensure that the integral does not change, the height of the bell curve
+must be adapted.
+- When the bell curve gets wider, it also has to get lower in the middle.
+- And when it gets lower, it has to get higher in the middle.
+
+While the occurrence of σ as the denominator of x-μ is responsible for the
+horizontal scaling,
+the other occurrence in the outer scaling factor takes care of the vertical
+scaling.
+
+[2-10]
+Let's see what would happen without the scaling factor.
+
+The integral would become σ*sqrt(2\pi).
+With our current value of σ this would become about 0.752.
+
+[2-11][2-12][2-13]
+But now the integral value depends on the selected value of σ.
+
+[2-14]
+That's why we have the σ in the scaling factor.
+
+Now we have understood the impact of μ and σ:
+- μ has no impact on the integral.
+- The "horizontal" impact of the right occurrence of σ
+  must be compensated "vertically" by the left occurrence.
+So let us get rid of the parameters now
+to concentrate on more interesting things.
+[2-15]
+Actually we set μ and σ to standard values 0 and 1.
+This allows us to eliminate them from the formula.
+
+The yellow curve represents the "standard" normal distribution.
+And of course its integral must be 1 again.
+
+This is ensured by the remaining scaling factor.
+
+[2-16]
+If we omit this scaling factor, the integral grows to
+√(2π)
+
+--------------------------------------------------------------------------------
+
+[3-0]
+At least we would expect this
+because we have learned that we need the scaling factor.
+
+[3-1]
+But why does this hold?
+
+[3-2]
+And where does the π come from?
+
+This is the main question I want to answer in this video.
+
+--------------------------------------------------------------------------------
+
+[4]
+You might want to treat this video as in a quiz show.
+
+I give you more and more hints about the solution.
+
+Once you think you can solve it on your own,
+you hit the buzzer.
+[buzz]
+
+Well, actually you stop the video.
+Then you have as much time as you need to solve the problem.
+
+If you want, you can report the video timestamp from which you solved it
+in the comments.
+
+If you could not yet come up with a solution,
+continue the video and try again later.
+
+--------------------------------------------------------------------------------
+
+[5-0]
+A short digression: π does show up in mathematics in unexpected places.
+Let me give you two examples.
+
+[5-1]
+The series consisting of
+- the inverses of
+- the odd numbers
+- with alternating signs
+adds up to π/4.
+
+Actually this appearance of π was not really unexpected
+because the series was developed during the investigation of trigonometric
+functions.
+
+With today's terminology we would say that
+the series is the taylor expansion at x = 0 of the inverse tangent function
+and then evaluated at x = 1.
+And the inverse tangent of 1 is 45°, or in radians: π/4
+
+[5-2]
+In the second example the appearance of π was perhaps more surprising.
+
+The series consists of
+- the inverses of
+- the square numbers.
+
+This series had been investigated by several mathematicians
+before it was solved.
+
+It is known as the "Basel problem" because several mathematicians from
+the Swiss city of Basel have worked on it.
+In particular
+- two members of the Bernoulli family and
+- Leonhard Euler
+who finally solved it.
+This result made Euler famous.
+
+There are several videos on YouTube
+explaining different derivations of the result.
+So I will not go into more detail here.
+
+Admittedly the only similarity to **our** problem is probably
+that π shows up in a problem
+that looks unrelated to circles on first sight.
+
+--------------------------------------------------------------------------------
+
+[6-0]
+So now let us return to our integral.
+
+BTW, I am not sure who is to credit for this solution.
+Where I searched, most frequently Laplace was mentioned,
+but also Poisson and Gauß.
+
+We give the integral the name **I** so we can refer to it more easily.
+
+[6-1]
+We are in the lucky position that we already know the value of I.
+We only need to find a derivation, not the value itself.
+
+[6-2]
+The square root gives us a first hint.
+It is often a good idea to get rid of roots to simplify things.
+[6-3]
+So we square our equation.
+
+[6-4]
+Now we use the definition of I.
+[6-5]
+
+[6-6]
+We write the square as a product.
+[6-7]
+
+[6-8]
+The two integrals are independent from each other.
+So we can use different names for the integration variables.
+Let us rename the integration variable in the right factor.
+[6-9]
+
+[6-10]
+The left factor is now just a constant
+from the point of view of the right integral.
+(It does not depend on y.)
+So we can pull it into the right integral.
+[6-11]
+
+[6-12]
+Similarly the right exponential expression does not depend on x
+and can thus be pulled into the x integral.
+[6-13]
+
+[6-14]
+Now we use the basic property of the exponential function:
+A **product** of exponentials can be rewritten
+as a single exponential function applied to the **sum** of the former
+exponents.
+[6-15]
+
+[6-16]
+We simplify this by pulling the factor "-1/2" out.
+[6-17]
+
+--------------------------------------------------------------------------------
+
+[7-0]
+Let us have a look at this function depending on x and y.
+
+We want to compute the volume under the function surface.
+
+[7-1]
+The volume consists of infinitesimal elements like this one.
+
+The element has infinitesimal lengths in the x and y direction.
+(This is the yellow dx and the magenta dy.)
+
+The height is just the function value for the respective values of x and y.
+
+[7-2]
+In the previous slide we have summed up these elements along the x axis
+
+[7-3]
+and then along the y axis.
+
+--------------------------------------------------------------------------------
+
+[6-17]
+This is the formula that we have reached.
+
+--------------------------------------------------------------------------------
+
+[7-4]
+The blue lines are those lines on the surface
+that have constant x or y values, respectively.
+
+[7-5]
+And here are the lines on the surface
+with a constant function value (or constant z value).
+[tilt the scene]
+And these are circles.
+
+Actually the subexpression (x^2 + y^2) is one side of a circle equation.
+Or one side of Pythagoras` theorem.
+Or a subexpression of the Euclidian norm.
+
+This suggests to replace (x^2 + y^2) with just r^2
+where r is the radius of one of these circles.
+
+We can deal with this most easily in a polar coordinate system
+(or a cylindric one if we also count the z axis).
+[7-6][7-7][7-8][7-9]
+
+The function now depends on the radius.
+It actually does not depend on the angle ϕ.
+
+[7-10]
+An infinitesimal element has the function value as its height
+as before.
+It is just expressed slightly differently.
+
+The size in the radial direction is just dr.
+
+In the tangential direction things become slightly more complicated.
+If we take an infinitesimal angle dϕ,
+the tangential size of the element is not just dϕ,
+but r*dϕ.
+
+This ensures that the tangential size becomes 
+[7-11] larger
+or
+[7-12] smaller 
+on larger and smaller circles.
+[7-13]
+
+Now we can integrate
+[7-14] in the tangential or angular direction from 0 to 2π
+and finally
+[7-15] in the radial direction from 0 to ∞.
+
+--------------------------------------------------------------------------------
+
+[6-18]
+So let's apply and use the transformation in our integral computation.
+[6-19]
+
+[6-20]
+The integrand does not depend on ϕ.
+So we can pull it out of the inner integral for ϕ.
+[6-21]
+
+[6-22]
+And the remaining integrand in the integral for ϕ is just 1.
+This makes the integral trivial.
+It can be solved to 2π.
+[6-23]
+
+--------------------------------------------------------------------------------
+
+[7-16][7-17][7-18][7-19]
+We could also treat our integration
+as the task to integrate the areas of all these cylinders.
+(Actually just the cylinder sides, not the caps and floors!)
+
+The cylinder area is the product of the circumference with the height.
+
+--------------------------------------------------------------------------------
+
+[6-23]
+And exactly this product occurs as the integrand of our current formula.
+
+[6-24]
+Pull the constant term 2π out.
+[6-25]
+
+[6-26]
+Now we are lucky.
+Our integrand happens to be the derivative of some elementary expression.
+This can be seen easily by deriving -exp(-1/2 r^2) using the chain rule.
+
+(Notice that without the extra factor "r"
+the exponential expression does not have an antiderivative.
+This is why we went all the way to the 2-variable integration
+and the polar coordinates.)
+
+[6-27]
+Now we apply the antiderivative...
+[6-28]
+
+[6-29]
+...evaluate it at the borders...
+[6-30]
+
+[6-31]
+...simplify...
+[6-32]
+
+[6-31]
+...take the square root on both sides again...
+[6-32]
+
+[6-33]
+Et voila, the result we were looking for.
+
+--------------------------------------------------------------------------------
+
+[7-21][7-22]
+A side note:
+I have even found articles on the web suggesting to integrate disks like these
+along the z axis.
+
+But this approach was meant as a training exercise in integration.
+
+--------------------------------------------------------------------------------
+
+[8-0]
+Let us briefly recap the most important steps of our derivation.
+
+[8-1]
+The first trick was to use the square of the integral
+and to convert this into an integral over 2 variables
+
+[8-2]
+The second trick was to rewrite the integrand
+to a formula involving (x^2 + y^2).
+And this can be replaced with r^2 using the circle equation
+(or Pythagoras or the Euklidian norm --  in a way it is all the same).
+
+[8-2]
+The third trick (or lucky coincidence) was that
+"exp(-1/2 r^2) r" (with the extra r!) has an antiderivative.
+
+So we have a quite typical situation:
+A proof is relatively easy to understand once it exists,
+but it is not trivial to find.
+And it was even more difficult at times
+when the result (√(2π)) was not yet known.
+
+--------------------------------------------------------------------------------
+
+[9]
+Now that we have understood the scaling factor in front of the exponential
+function,
+we may ask for the reason for the other scaling factor:
+The factor 1/2 inside the exponential function.
+
+--------------------------------------------------------------------------------
+
+[10-0]
+I am deriving a result about the variance of the standard normal distribution
+in several steps.
+This result will help understanding why have this other scaling factor.
+
+[10-1]
+As usual, we denote the probability distribution function of the standard
+normal distribution as "φ".
+
+[10-2]
+Now let's find the derivative φ'.
+
+[10-3]
+The constant factor and the exponential function remain unchanged from φ,
+but we have to apply the chain rule twice:
+- for the factor inside the exponential function
+- for the squaring of x
+
+[10-4]
+We rewrite the first part of the expression as φ(x).
+=> [10-5]
+
+[10-6]
+The factors of 1/2 and 2 cancel each other out.
+=> [10-7]
+
+[10-8]
+And let's pull the factor -x to the beginning of the expression.
+=> [10-9]
+
+[10-10]
+Now derive this another time.
+
+[10-11]
+We keep the minus sign and apply the product rule to the rest:
+- derive the first factor and keep the second
+  plus
+- keep the first factor and derive the second
+
+[10-12]
+Eliminate the 1
+=> [10-13]
+
+[10-14]
+Use our previous formula for φ'
+=> [10-15]
+
+[10-16]
+Simplify the minus signs
+=> [10-17]
+
+[10-18]
+Join the xs
+=> [10-19]
+
+[10-20]
+Pull out φ(x)
+=> [10-21]
+
+Why is this greyed out?
+This result is correct, but it is not really what we need.
+
+[10-22]
+So we go back to the previous formula.
+
+[10-23]
+We are actually interested in the second term here.
+
+[10-24] (Skip over this step.)
+
+[10-25]
+So here is the formula for that term x^2 φ(x).
+
+[10-26]
+As I said earlier,
+we are interested in the variance of our probability distribution function.
+
+[10-27]
+And generally the variance of a PDF is defined as this integral.
+
+[10-28]
+In general we have to subtract the mean μ from x
+to ensure that the distribution is balanced around 0.
+But in our case this is not necessary
+as our distribution is already balanced.
+=> [10-29]
+
+[10-30]
+Now the integrand is exactly the term
+from the left-hand-side in the previous line.
+We replace it by the right-hand side.
+=> [10-31]
+
+[10-32]
+Now we split the integral over a sum into a sum of integrals.
+=> [10-33]
+
+[10-34]
+The second integral is just the integral over the entire domain of the PDF.
+And, as we have seen earlier, the PDF was normalized
+so that this integral evaluates to 1.
+=> [10-35]
+
+[10-36]
+Now for the first integral.
+The nice thing here is that the integrand is a derivative we already know.
+The antiderivative of φ'' is just φ'.
+We simply apply that function at both ends of the integration interval
+and subtract the values.
+
+[10-37]
+You might be familiar with this notation for expressing that.
+
+[10-38]
+φ is 0 for both negative and positive infinity.
+
+[10-39]
+So here is the trivial difference.
+
+[10-40]
+And finally let's simplify that term
+=> [10-41]
+to 1.
+
+And the standard deviation,
+which is just the square root of the variance,
+is also 1.
+
+Setting the variance (or standard deviation) to 1
+is the second step of "standardization" of the Gaussian distribution.
+(The first step was to set the mean to 0.)
+
+If we had *not* started with the inner scaling factor of 1/2
+at the top of the page,
+we would not have arrived at a variance of 1.
+
+(I leave it to you to adapt the derivations.)
+
+So this explains why we have this inner scaling factor of 1/2.
+
+--------------------------------------------------------------------------------
+
+[11-0]
+Finally a note about the technologies used in this presentation.
+
+I must admit that trying out some technologies
+was my actual motivation for creating this presentation.
+
+If it were just about the scaling factors,
+there are already several presentations around.
+In particular there is a video by 3blue1brown on this topic,
+which came out at a time when I had this presentation almost complete.
+
+I wanted to know if web technologies are sufficient to produce animations
+similar to those generated with, say, the Python-based "manim" library.
+
+While my presentation would still need some polishing to reach that quality,
+I am convinced now that there is no deep obstacle
+to getting on a par with manim using web technologies.
+
+And my web-based approach has additional advantages:
+1. I can interact with the slides.
+   For example:
+   - I can step back for answering questions from the audience.
+   - And I can switch between notations:
+     - between π and τ
+     - or between exp(x) and e^x.
+2. I can easily publish the slides for you to play around with.
+
+[11-1]
+### TODO: Add the URL to the slide ######################
+
+[11-2]
+So what have I used?
+- TypeScript, React, and Vite are meanwhile pretty standard choices.
+
+[11-3]
+- three.js provides a relatively comfortable JavaScript API
+  for 3D graphics running in the browser, using your graphics card.
+- react-three-fiber makes this even more comfortable
+  by integrating it with React.
+- "drei" is a set of react-three-fiber components.
+
+[11-4]
+- I have used SVG for 2D graphics.
+
+- In earlier versions of this presentation I have also used
+  PixiJS and ReactPixi.
+  These also gave a very good impression.
+
+  However I consolidated on technologies
+  because using Pixi and Three at the same time became confusing.
+  They are quite similar but have different APIs.
+  I frequently tried to use Pixi in the Three-way or Three in the Pixi-way.
+
+- With the orthogonal camera, three.js is also an option for 2D graphics.
+  That might be my choice for a future project.
+
+- Plain canvas was a bit too low-level.
+
+[11-5]
+- For rendering TeX formulas I have chosen KaTeX over MathJax because it felt
+  much more light-weight.
+  I think MathJax is more appropriate for non-interactive documents.
+
+- I preferred Matej Mazur's react integration over other existing integrations.
+  But unfortunately I don't remember why.
+
+[11-6]
+- Leva provides the config boxes in the top-right corners of the slide.
+
+  These are not only useful for interacting with the presentation
+  while giving a talk.
+  They were also very helpful while developing the presentation.
+  In particular, they allowed me to go through the steps of a slide manually
+  before I configured the sequence of steps.
+
+[11-7]
+- The slide-show navigation is home-grown.
+
+  There are of course a lot of tools around,
+  but I was not sure which one to pick.
+
+  After all, it is not too complicated to implement this functionality.
+  And it allowed me to integrate the stepping with the graphics and formulas.
+
+--------------------------------------------------------------------------------
