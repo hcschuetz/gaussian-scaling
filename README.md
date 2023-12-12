@@ -1,15 +1,5 @@
 <!DOCTYPE html>
-<style>
-  body {
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 2rem;
-  }
-</style>
-
 <h1>The Scaling Factor in the Gaussian Distribution</h1>
-
-<a href="gaussian-scaling/dist/">Demo</a>,
-<a href="https://github.com/hcschuetz/gaussian-scaling">Source</a>
 
 <p>
   This project had two goals:
