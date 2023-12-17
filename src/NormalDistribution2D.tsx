@@ -3,8 +3,8 @@ import { Canvas } from "@react-three/fiber"
 import { FC } from "react";
 import { stepList, steps } from "./StepsDef";
 import TAU from "./TAU";
-import { ColorRepresentation, DoubleSide, Vector3 } from "three";
-import { combineSurfaceGenerators, quadrangulate, SurfaceGenerator } from "./SurfaceGeometry";
+import { DoubleSide, Vector3 } from "three";
+import { combineSurfaceGenerators, quadrangulate } from "./SurfaceGeometry";
 import useControlsWithStepping from "./useControlsWithStepping";
 import { Slide } from "./SlideShow";
 import { Formula } from "./Formula";
